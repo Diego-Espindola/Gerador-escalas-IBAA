@@ -1,0 +1,14 @@
+<div class="escala-container">
+  <h2>Gerador de Escala de Louvor</h2>
+  <app-escala-form
+    [campos]="campos"
+    [(dias)]="dias"
+    [(mesAno)]="mesAno"
+  ></app-escala-form>
+  <app-escala-preview-download
+    [dias]="dias"
+    [mesAno]="mesAno"
+    [titulo]="'Escala do Louvor'"
+    [campos]="campos"
+  ></app-escala-preview-download>
+</div>  

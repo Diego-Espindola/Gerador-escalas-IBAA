@@ -1,0 +1,30 @@
+<form>
+  <label>Mês/Ano:</label>
+  <input type="month" [(ngModel)]="mesAno" name="mesAno" (change)="gerarDomingos(); mesAnoChange.emit(mesAno)" />
+  <div *ngFor="let dia of dias; let i = index" class="dia-item">
+    <label>Dia:</label>
+    <input type="text" [(ngModel)]="dia.dia" name="dia{{i}}" placeholder="Ex: 01/10/2025" />
+    <ng-container *ngFor="let campo of campos">
+      <label>{{ campo.label }}:</label>
+      <ng-container *ngIf="campo.listaMultipla; else unico">
+        <div class="chip-list">
+          <span *ngFor="let item of dia[campo.label]; let idx = index" class="chip">
+            {{ item }} <button type="button" (click)="removerSelecionado(campo.label, i, idx)">x</button>
+          </span>
+        </div>
+        <select #select (change)="adicionarSelecionado(campo.label, i, $any($event.target).value); select.value=''">
+          <option value="">Adicionar {{ campo.label.toLowerCase() }}</option>
+          <option *ngFor="let op of campo.lista" [value]="op" [disabled]="dia[campo.label].includes(op)">{{ op }}</option>
+        </select>
+      </ng-container>
+      <ng-template #unico>
+        <select [(ngModel)]="dia[campo.label]" name="{{campo.label}}{{i}}" (change)="setUnico(campo.label, i, $any($event.target).value)">
+          <option value="">Selecione {{ campo.label.toLowerCase() }}</option>
+          <option *ngFor="let op of campo.lista" [value]="op">{{ op }}</option>
+        </select>
+      </ng-template>
+    </ng-container>
+    <button type="button" (click)="removerDia(i)">Remover</button>
+  </div>
+  <button type="button" (click)="adicionarDia()">Adicionar Dia</button>
+</form>

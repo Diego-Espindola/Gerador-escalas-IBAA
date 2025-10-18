@@ -1,0 +1,24 @@
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+}
+.home-options {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.home-btn {
+  background: #2d3e50;
+  color: #fff;
+  padding: 1.2rem 2.5rem;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.home-btn:hover {
+  background: #1a2533;
+}

@@ -1,0 +1,29 @@
+<div id="preview-escala-visible" class="preview-visible">
+    <h3 style="text-align: center;">{{ titulo }} - {{ mesAno ? mesAno.split('-')[1] + '/' + mesAno.split('-')[0] : '' }}</h3>
+    <table class="escala-table">
+    <thead>
+        <tr style="background:#eee;">
+        <th style="border:1px solid #ccc;padding:8px;">Dia</th>
+        <th *ngFor="let campo of campos" style="border:1px solid #ccc;padding:8px;">{{ campo.label }}</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let dia of dias">
+        <td style="border:1px solid #ccc;padding:8px;">{{ dia.dia }}</td>
+        <td *ngFor="let campo of campos" style="border:1px solid #ccc;padding:8px;">
+            <ng-container *ngIf="campo.listaMultipla; else unico">
+            <span *ngFor="let item of dia[campo.label]; let idx = index">
+                {{ item }}<span *ngIf="idx < dia[campo.label].length - 1">, </span>
+            </span>
+            </ng-container>
+            <ng-template #unico>
+            {{ dia[campo.label] }}
+            </ng-template>
+        </td>
+        </tr>
+    </tbody>
+    </table>
+</div>
+<!-- overlay opcional para visualizar área segura (remova se não quiser ver) -->
+<div class="safe-circle-overlay" aria-hidden="true"></div>
+<button class="btn-baixar-img" (click)="baixarImagem()">Baixar Imagem</button>

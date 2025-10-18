@@ -1,0 +1,14 @@
+<div class="escala-container">
+  <h2>Gerador de Escala de Mídia</h2>
+  <app-escala-form
+    [campos]="campos"
+    [(dias)]="dias"
+    [(mesAno)]="mesAno"
+  ></app-escala-form>
+  <app-escala-preview-download
+    [dias]="dias"
+    [mesAno]="mesAno"
+    [titulo]="'Escala da Mídia'"
+    [campos]="campos"
+  ></app-escala-preview-download>
+</div>
