@@ -1,10 +1,10 @@
 {
-  "name": "gerador-escala-louvor",
+  "name": "gerador-escala-ibaa",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --configuration production --base-href gerador-escala-ibaa",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
