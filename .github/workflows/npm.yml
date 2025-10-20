@@ -30,12 +30,19 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build
-        run: npm run build
+      - name: Build (prod) -> output to dist/Gerador-escalas-IBAA
+        run: npm run build -- --configuration production --output-path=dist/Gerador-escalas-IBAA --base-href /Gerador-escalas-IBAA/
+
+      - name: Move files out of browser folder (if exists)
+        run: |
+          if [ -d "dist/Gerador-escalas-IBAA/browser" ]; then
+            cp -r dist/Gerador-escalas-IBAA/browser/* dist/Gerador-escalas-IBAA/
+            rm -rf dist/Gerador-escalas-IBAA/browser
+          fi
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
-          publish_dir: ./browser
+          publish_dir: ./dist/Gerador-escalas-IBAA/browser
