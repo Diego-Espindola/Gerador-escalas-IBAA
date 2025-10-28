@@ -1,6 +1,12 @@
 <form>
   <label>Mês/Ano:</label>
-  <input type="month" [(ngModel)]="mesAno" name="mesAno" (change)="gerarDomingos(); mesAnoChange.emit(mesAno)" />
+  <div style="display: flex; align-items: center; gap: 8px;">
+    <input type="month" [(ngModel)]="mesAno" name="mesAno" (change)="gerarDomingos(); mesAnoChange.emit(mesAno)" />
+  </div>
+  <div>
+  <button type="button" (click)="recriarDomingos()" title="Recriar Domingos">🔄 Recriar Domingos</button>
+  <br><br>
+  </div>
   <div *ngFor="let dia of dias; let i = index" class="dia-item">
     <label>Dia:</label>
     <input type="text" [(ngModel)]="dia.dia" name="dia{{i}}" placeholder="Ex: 01/10/2025" />
