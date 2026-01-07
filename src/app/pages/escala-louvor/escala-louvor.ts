@@ -14,8 +14,8 @@ import { EscalaPreviewDownloadComponent } from '../../_components/escala-preview
 export class EscalaLouvorPage {
 
   mesAno: string = '';
-  listaVocal: string[] = ['Rosana', 'Bruna', 'Carol', 'Rosângela', 'Brenda', 'Ana', 'Bianca', 'Helena', 'Raquel', 'Mara', 'Luis'];
-  listaMinistro: string[] = ['Fernando', 'Diego', 'Ana', 'Helena'];
+  listaVocal: string[] = ['Ana', 'Bianca', 'Bruna', 'Carol', 'Helena', 'Luis', 'Mara', 'Raquel', 'Rosana', 'Rosângela'];
+  listaMinistro: string[] = ['Ana', 'Diego', 'Fernando', 'Helena', 'Marcos'];
   listaMusicos: string[] = ['Diego', 'Fernando', 'Jonathan', 'Marcos', 'Lidiane', 'Cristian', 'Luis'];
   dias: Array<any> = [];
   campos = [
