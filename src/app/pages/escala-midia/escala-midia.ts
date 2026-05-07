@@ -16,7 +16,7 @@ import { EscalaPreviewDownloadComponent } from '../../_components/escala-preview
 export class EscalaMidiaPage {
   mesAno: string = '';
   dias: Array<any> = [];
-  listaMidianitas : string[] = ['Fernando', 'Carol', 'Rafaela', 'Jonathan', 'Brenda', 'Paola', 'Marcos', 'Diego'];
+  listaMidianitas : string[] = ['Fernando', 'Carol', 'Rafaela', 'Kauã', 'Brenda', 'Paola', 'Marcos', 'Diego'];
   campos: EscalaCampo[] = [
     { label: 'Fotos e Postagens', listaMultipla: true, lista: this.listaMidianitas },
     { label: 'Datashow', listaMultipla: true, lista: this.listaMidianitas }
