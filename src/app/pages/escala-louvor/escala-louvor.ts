@@ -15,7 +15,7 @@ export class EscalaLouvorPage {
 
   mesAno: string = '';
   listaVocal: string[] = ['Ana Paula', 'Diego', 'Cristian', 'Bianca', 'Bruna', 'Helena', 'Luis', 'Raquel', 'Rosângela', 'Débora'];
-  listaMinistro: string[] = ['Ana Paula', 'Diego', 'Luis', 'Fernando', 'Helena', 'Marcos'];
+  listaMinistro: string[] = ['Ana Paula', 'Diego', 'Luis', 'Helena', 'Marcos'];
   listaMusicos: string[] = ['Diego', 'Marcos', 'Lidiane', 'Cristian', 'Luis', 'Josafá', 'Patrícia'];
   dias: Array<any> = [];
   campos = [
